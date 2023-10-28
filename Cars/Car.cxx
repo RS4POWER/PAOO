@@ -9,8 +9,16 @@ Car::Car() : brand(nullptr), year(0), price(0.0) {
 
 Car::Car(const char* brand, int year, double price) : year(year), price(price) {
     std::cout << "Constructor personalizat called." << std::endl;
-    this->brand = new char[strlen(brand) + 1];
-    strcpy(this->brand, brand);
+    if(brand)
+    {
+        size_t length = strlen(brand);
+        this->brand = new char [length +1];
+        strncpy(this->brand, brand, length+1);
+    }
+    else
+    {
+        this->brand = nullptr;
+    }
 }
 
 Car::Car(const Car& other) : year(other.year), price(other.price) {
@@ -34,8 +42,9 @@ void Car::SetBrand(const char* brand) {
     if (this->brand) {
         delete[] this->brand;
     }
-    this->brand = new char[strlen(brand) + 1];
-    strcpy(this->brand, brand);
+    size_t length = strlen(brand);
+    this->brand = new char[length + 1];
+    strncpy(this->brand, brand, length +1);
 }
 
 const char* Car::GetBrand() const {
@@ -59,8 +68,16 @@ double Car::GetPrice() const {
 }
 
 void Car::CopyData(const Car& other) {
-    this->brand = new char[strlen(other.brand) + 1];
-    strcpy(this->brand, other.brand);
+    if(other.brand)
+    {
+        size_t length = strlen(other.brand);
+        this->brand = new char[length + 1 ];
+        strncpy(this->brand, other.brand, length + 1);
+    }
+    else
+    {
+        this->brand = nullptr;
+    }
 }
 
 void Car::ReleaseData() {
