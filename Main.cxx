@@ -1,6 +1,6 @@
-﻿#include "Cars/Car.h"
-#include "Cars/ElectricCar.h"
-#include "Cars/HybridCar.h"
+﻿#include "Car.h"
+#include "ElectricCar.h"
+#include "HybridCar.h"
 #include <iostream>
 
 int main() {
