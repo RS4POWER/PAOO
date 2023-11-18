@@ -2,20 +2,25 @@
 #include <iostream>
 
 namespace Vehicles {
-    ElectricCar::ElectricCar() : Car(), batteryCapacity(0.0) {
-        std::cout << "ElectricCar constructor called." << std::endl;
-    }
-
     ElectricCar::ElectricCar(const char* brand, int year, double price, double batteryCapacity)
-        : Car(brand, year, price), batteryCapacity(batteryCapacity) {
-        std::cout << "ElectricCar custom constructor called." << std::endl;
+        : Car(brand, year, price), batteryCapacity(batteryCapacity) {}
+
+    void ElectricCar::DisplayInfo() const {
+        Car::DisplayInfo();
+        std::cout << "Battery Capacity: " << GetBatteryCapacity() << " kWh" << std::endl;
     }
 
-    void ElectricCar::SetBatteryCapacity(double batteryCapacity) {
-        this->batteryCapacity = batteryCapacity;
+    double ElectricCar::calculatePower() const {
+        // Implementare specifică pentru calculul puterii unei mașini electrice
+        return GetBatteryCapacity() * 1.21; // Un exemplu simplificat
     }
 
     double ElectricCar::GetBatteryCapacity() const {
         return batteryCapacity;
     }
-} // namespace Vehicles
+    double ElectricCar::calculatePowerInterface() const {
+        // Implementează logica pentru calculul puterii pentru mașina electrică
+        // Poți folosi atributele clasei pentru a calcula puterea
+        return batteryCapacity * 1.21; // Exemplu de calcul fictiv
+    } // namespace Vehicles
+}
