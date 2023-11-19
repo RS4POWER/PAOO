@@ -10,6 +10,21 @@ namespace Vehicles {
     public:
         ElectricCar(const char* brand, int year, double price, double batteryCapacity);
 
+        // Constructor de copiere
+        ElectricCar(const ElectricCar& other);
+
+        // Constructor de mutare
+        ElectricCar(ElectricCar&& other) noexcept;
+
+        // Operator de atribuire de copiere
+        ElectricCar& operator=(const ElectricCar& other);
+
+        // Operator de atribuire de mutare
+        ElectricCar& operator=(ElectricCar&& other) noexcept;
+
+        // Destructor
+        ~ElectricCar();
+
         void DisplayInfo() const;
 
         double calculatePower() const override;

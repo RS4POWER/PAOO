@@ -8,24 +8,28 @@ int main() {
     std::cout << "======= Electric Car Example in Vehicles Namespace =======" << std::endl;
 
     // Creare obiect ElectricCar utilizând constructorul
+    std::cout << "Creating ElectricCar object:" << std::endl;
     Vehicles::ElectricCar electricCar("Tesla", 2022, 80000.0, 75.0);
 
-    // Apelarea metodei pentru a afișa informații despre mașină
-    std::cout << "Displaying Electric Car Information:" << std::endl;
+    // Afisare informatii inainte de operatii de copiere/mutare
+    std::cout << "Displaying Electric Car Information Before Operations:" << std::endl;
     electricCar.DisplayInfo();
 
-    // Apelarea funcției virtuale pentru a calcula și afișa puterea mașinii
-    std::cout << "Calculating and Displaying Electric Car Power using Virtual Function:" << std::endl;
-    std::cout << "Power: " << electricCar.calculatePower() << " kW" << std::endl;
-
-    // Apelarea funcției pur virtuale pentru a calcula și afișa puterea mașinii (interfața)
-    std::cout << "Calculating and Displaying Electric Car Power using Interface Function:" << std::endl;
-    std::cout << "Power: " << electricCar.calculatePowerInterface() << " kW" << std::endl;
-
-    // Testarea operatorului de asignare
-    std::cout << "Testing Copy Assignment Operator:" << std::endl;
+    // Copiere ElectricCar folosind constructorul de copiere personalizat
+    std::cout << "Creating a copy of ElectricCar using Copy Constructor:" << std::endl;
     Vehicles::ElectricCar electricCarCopy = electricCar;
+
+    // Afisare informatii dupa operatia de copiere
+    std::cout << "Displaying Electric Car Information After Copy Operation:" << std::endl;
     electricCarCopy.DisplayInfo();
+
+    // Mutare ElectricCar folosind operatorul de mutare personalizat
+    std::cout << "Moving ElectricCar using Move Assignment Operator:" << std::endl;
+    Vehicles::ElectricCar electricCarMoved = std::move(electricCar);
+
+    // Afisare informatii dupa operatia de mutare
+    std::cout << "Displaying Electric Car Information After Move Operation:" << std::endl;
+    electricCarMoved.DisplayInfo();
 
     std::cout << std::endl;
 
@@ -33,24 +37,29 @@ int main() {
     std::cout << "======= Hybrid Car Example in Vehicles Namespace =======" << std::endl;
 
     // Creare obiect HybridCar utilizând constructorul
+    std::cout << "Creating HybridCar object:" << std::endl;
     Vehicles::HybridCar hybridCar("Toyota", 2022, 35000.0, 45.0);
 
-    // Apelarea metodei pentru a afișa informații despre mașină
-    std::cout << "Displaying Hybrid Car Information:" << std::endl;
+    // Afisare informatii inainte de operatii de copiere/mutare
+    std::cout << "Displaying Hybrid Car Information Before Operations:" << std::endl;
     hybridCar.DisplayInfo();
 
-    // Apelarea funcției virtuale pentru a calcula și afișa puterea mașinii
-    std::cout << "Calculating and Displaying Hybrid Car Power using Virtual Function:" << std::endl;
-    std::cout << "Power: " << hybridCar.calculatePower() << " kW" << std::endl;
+    // Copiere HybridCar folosind constructorul de copiere personalizat
+    std::cout << "Creating a copy of HybridCar using Copy Constructor:" << std::endl;
+    Vehicles::HybridCar hybridCarCopy = hybridCar;
 
-    // Apelarea funcției pur virtuale pentru a calcula și afișa puterea mașinii (interfața)
-    std::cout << "Calculating and Displaying Hybrid Car Power using Interface Function:" << std::endl;
-    std::cout << "Power: " << hybridCar.calculatePowerInterface() << " kW" << std::endl;
+    // Afisare informatii dupa operatia de copiere
+    std::cout << "Displaying Hybrid Car Information After Copy Operation:" << std::endl;
+    hybridCarCopy.DisplayInfo();
 
-    // Testarea operatorului de asignare move
-    std::cout << "Testing Move Assignment Operator:" << std::endl;
+    // Mutare HybridCar folosind operatorul de mutare personalizat
+    std::cout << "Moving HybridCar using Move Assignment Operator:" << std::endl;
     Vehicles::HybridCar hybridCarMoved = std::move(hybridCar);
+
+    // Afisare informatii dupa operatia de mutare
+    std::cout << "Displaying Hybrid Car Information After Move Operation:" << std::endl;
     hybridCarMoved.DisplayInfo();
 
     return 0;
 }
+

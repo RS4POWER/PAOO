@@ -10,6 +10,21 @@ namespace Vehicles {
     public:
         HybridCar(const char* brand, int year, double price, double fuelCapacity);
 
+        // Constructor de copiere
+        HybridCar(const HybridCar& other);
+
+        // Constructor de mutare
+        HybridCar(HybridCar&& other) noexcept;
+
+        // Operator de atribuire de copiere
+        HybridCar& operator=(const HybridCar& other);
+
+        // Operator de atribuire de mutare
+        HybridCar& operator=(HybridCar&& other) noexcept;
+
+        // Destructor
+        ~HybridCar();
+
         void DisplayInfo() const;
 
         double calculatePower() const override;
