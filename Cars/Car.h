@@ -27,7 +27,7 @@ namespace Vehicles {
         int GetYear() const;
         double GetPrice() const;
 
-        // Adaugă implementarea pentru calculatePowerInterface aici
+        // Functie virtuala de implementat in fiecare clasa aparte.
         double calculatePowerInterface() const = 0;
     };
 } // namespace Vehicles

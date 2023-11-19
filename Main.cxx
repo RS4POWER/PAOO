@@ -27,7 +27,6 @@ int main() {
     Vehicles::ElectricCar electricCarCopy = electricCar;
     electricCarCopy.DisplayInfo();
 
-    // Linie nouă pentru a separa exemplele
     std::cout << std::endl;
 
     // Exemplu cu mașină hibridă în namespace-ul Vehicles
