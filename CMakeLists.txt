@@ -9,6 +9,7 @@ add_subdirectory(Cars)
 
 add_executable(CarsApp Main.cxx)
 
-target_link_libraries(CarsApp PUBLIC Car)
+target_link_libraries(CarsApp PUBLIC Cars)
 
 target_include_directories(CarsApp PUBLIC "${PROJECT_BINARY_DIR}" "${PROJECT_SOURCE_DIR}/Cars")
+
