@@ -64,12 +64,12 @@ std::weak_ptr<Car> ParkingLot::getHandicapCarReference() {
 
     for (const auto& car : parkedCars) {
         if (car->isHandicap()) {
-            // Returnăm un weak_ptr la prima mașină pentru persoane cu handicap (dacă există)
+            // Returnăm un weak_ptr la prima masina pentru persoane cu handicap (daca exista)
             return car;
         }
     }
 
-    // Returnăm un weak_ptr gol dacă nu există mașini pentru persoane cu handicap
+    // Returnăm un weak_ptr gol daca nu exista mașini pentru persoane cu handicap
     return std::weak_ptr<Car>();
 }
 

@@ -12,9 +12,9 @@ int main() {
     ParkingLot parkingLot(5);
 
     // Creăm două mașini folosind smart pointers
-    std::shared_ptr<Car> car1 = std::make_shared<Car>("AR34AEX", true);  // Această mașină necesită un loc special pentru handicap
+    std::shared_ptr<Car> car1 = std::make_shared<Car>("AR34AEX", true);  
     std::shared_ptr<Car> car2 = std::make_shared<Car>("AR21AIR");
-    std::shared_ptr<Car> car3 = std::make_shared<Car>("AR04INA", true);  // Această mașină necesită un loc special pentru handicap
+    std::shared_ptr<Car> car3 = std::make_shared<Car>("AR04INA", true);  
     std::shared_ptr<Car> car4 = std::make_shared<Car>("AR17ALX");
 
     // Adăugăm mașinile în parcare
@@ -45,7 +45,7 @@ int main() {
     std::thread threadCar3(simulateCarEntryExit, car3, 5, 7);
     std::thread threadCar4(simulateCarEntryExit, car4, 6, 8);
 
-    // Așteptăm până când firele de execuție se termină
+    // Așteptam pana când firele de execuție se termină
     threadCar1.join();
     threadCar2.join();
     threadCar3.join();
