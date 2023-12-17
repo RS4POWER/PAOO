@@ -11,7 +11,7 @@ int main() {
     // Creăm o parcare cu o capacitate de 5 locuri
     ParkingLot parkingLot(5);
 
-    // Creăm două mașini folosind smart pointers
+    // Creăm 4 mașini folosind smart pointers
     std::shared_ptr<Car> car1 = std::make_shared<Car>("AR34AEX", true);  
     std::shared_ptr<Car> car2 = std::make_shared<Car>("AR21AIR");
     std::shared_ptr<Car> car3 = std::make_shared<Car>("AR04INA", true);  
